@@ -1,0 +1,166 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_clck.at
+//Test AT+CLCK command 
+//AT+CLCK command is used to lock, unlock or get status of device/network facility
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the list of supported responses
+//"AO" BAOC (Barr All Outgoing Calls)
+//"OI" BOIC (Barr Outgoing International Calls)
+//"OX" BOIC-exHC (Barr Outgoing International Calls except to Home Country)
+//"AI" BAIC (Barr All Incoming Calls)
+//"IR" BIC-Roam (Barr Incoming Calls when Roaming outside the home country)
+//"FD" SIM card or active application in the UICC (GSM or USIM) fixed dialling memory feature (if PIN2 authentication has not been done during the current session, PIN2 is required as <passwd>)
+//"SC" SIM (lock SIM/UICC card) (SIM/UICC asks password in MT power-up and when this lock command issued) Correspond to PIN1 code. 
+//"PN" Network Personalization, Correspond to NCK code
+//"PU" Network subset Personalization Correspond to NSCK code 
+//"PP" Service Provider Personalization Correspond to SPCK code
+//"CS" CNTRL (lock CoNTRoL surface (e.g. phone keyboard))
+//"PS" PH SIM (lock PHone to SIM/UICC card installed in the currently selected card slot) 
+//"PF" lock Phone to the very First inserted SIM/UICC card (also referred in the present document as PH-FSIM)
+//"AB" All Barring services  (applicable only for <mode>=0)
+//"AG" All outGoing barring services  (applicable only for <mode>=0)
+//"AC" All inComing barring services (applicable only for <mode>=0)
+AT+CLCK=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of all outgoing calls
+// 0 - unlock 1 - lock
+AT+CLCK="AO",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Lock all outgoing calls with password
+// 0 - unlock 1 - lock
+AT+CLCK="AO",1,"1234"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of all outgoing calls
+// 0 - unlock 1 - lock
+AT+CLCK="AO",2
+
+//Query the staus of outgoing international calls
+// 0 - unlock 1 - lock
+AT+CLCK="OI",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Lock all outgoing international calls with password
+// 0 - unlock 1 - lock
+AT+CLCK="OI",1,"1234"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of outgoing international calls
+// 0 - unlock 1 - lock
+AT+CLCK="OI",2
+
+//Query the staus of outgoing international calls except to home country
+// 0 - unlock 1 - lock
+AT+CLCK="OX",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Lock all outgoing international calls except to home country with password
+// 0 - unlock 1 - lock
+AT+CLCK="OX",1,"1234"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of outgoing international calls except to home country
+// 0 - unlock 1 - lock
+AT+CLCK="OX",2
+
+//Query the staus of all incoming calls 
+// 0 - unlock 1 - lock
+AT+CLCK="AI",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Lock all incoming calls 
+// 0 - unlock 1 - lock
+AT+CLCK="AI",1,"1234"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of incoming calls 
+// 0 - unlock 1 - lock
+AT+CLCK="AI",2
+
+//Query the staus of all incoming calls when roaming outside the home country
+// 0 - unlock 1 - lock
+AT+CLCK="IR",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Lock all incoming calls when roaming outside the home country
+// 0 - unlock 1 - lock
+AT+CLCK="IR",1,"1234"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the staus of incoming calls when roaming outside the home country
+// 0 - unlock 1 - lock
+AT+CLCK="IR",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "FD" SIM card or active application in the UICC 
+AT+CLCK="AI",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "SC" SIM (lock SIM/UICC card) 
+AT+CLCK="SC",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "PN" Network Personalization, Correspond to NCK code
+AT+CLCK="PN",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "PU" Network subset Personalization Correspond to NSCK code 
+AT+CLCK="PU",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "PP" Service Provider Personalization Correspond to SPCK code
+AT+CLCK="PP",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "CS" CNTRL (lock CoNTRoL surface (e.g. phone keyboard))
+AT+CLCK="CS",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "PS" PH SIM (lock PHone to SIM/UICC card installed in the currently selected card slot) 
+AT+CLCK="PS",2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query "PF" lock Phone to the very First inserted SIM/UICC card (also referred in the present document as PH-FSIM)
+AT+CLCK="PF",2
+

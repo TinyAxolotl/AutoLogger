@@ -1,0 +1,41 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_clvl.at
+//Test AT+CLVL command 
+//AT+CLVL command is used to set/get loud speaker level
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the list of supported responses
+AT+CLVL=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current loud speaker volume level
+//Returned value should be in range 0-100
+AT+CLVL?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set loud speaker volume to 50
+AT+CRSL=50
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CLVL?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set loud speaker volume level to 100
+AT+CLVL=100
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CLVL?
+
+

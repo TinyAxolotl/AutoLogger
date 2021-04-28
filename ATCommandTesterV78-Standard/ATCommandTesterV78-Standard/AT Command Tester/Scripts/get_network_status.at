@@ -1,0 +1,12 @@
+//Script:get_network_status.at
+//Get the current operator and registration status of the device
+
+
+//Display the Operator names
+AT+COPN
+
+//Get the registration status
+At+CREG?
+
+//Get current operator that network is registered
+AT+COPS?

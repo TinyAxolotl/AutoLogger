@@ -1,0 +1,80 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at+cscs.at
+//Test AT+CSCS command 
+//AT+CSCS command is used to set character set of the device
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CSCS=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current character set
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to GSM - GSM 7 bit default alphabet
+AT+CSCS="GSM"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to UCS2 - 16-bit universal multiple-octet coded character set
+AT+CSCS="UCS2"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to IRA - International reference alphabet
+AT+CSCS="IRA"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to HEX - 1
+AT+CSCS="HEX"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to PCCP - PC character set code
+AT+CSCS="PCCP"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to PCDN - PC Danish/Norwegian set
+AT+CSCS="PCDN"
+
+//confirm the setting
+AT+CSCS?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set Character set to 8859-1 = ISO 8859 Latin 1 character set
+AT+CSCS="8859-1"
+
+//confirm the setting
+AT+CSCS?

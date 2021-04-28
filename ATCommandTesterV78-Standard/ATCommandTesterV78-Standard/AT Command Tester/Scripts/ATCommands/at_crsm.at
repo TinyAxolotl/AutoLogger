@@ -1,0 +1,199 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_crsm.at
+//AT+CRSM command is used to test restricted SIM Access commands
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Reading ICCID - Identifier is 12258
+AT+CRSM=176,12258,0,0,10
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Language preference - Identifier is 28421
+AT+CRSM=176,28421,0,0,10
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading IMSI - Identifier is 28423
+AT+CRSM=176,28423,0,0,9
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Ciphering Key - Identifier is 28448
+AT+CRSM=176,28448,0,0,9
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading PLMN Selector - Identifier is 28464
+AT+CRSM=176,28464,0,0,9
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading HPLMN Search Period - Identifier is 28465
+AT+CRSM=176,28465,0,0,1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Accumulated Call Meter Max Value - Identifier is 28471
+AT+CRSM=176,28471,0,0,3
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading SIM Service Table - Identifier is 28472
+AT+CRSM=176,28472,0,0,8
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Accumulated Call Meter - Identifier is 28473
+AT+CRSM=176,28473,0,0,3
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Group Identifier Level 1 - Identifier is 28478
+AT+CRSM=176,28478,0,0,1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Group Identifier Level 2 - Identifier is 28479
+AT+CRSM=176,28479,0,0,8
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Service Provider - Identifier is 28662
+AT+CRSM=176,2862,0,0,17
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Price Currency Table - Identifier is 28481
+AT+CRSM=176,28481,0,0,5
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Cell broadcast message identifier selection - Identifier is 28485
+AT+CRSM=176,28485,0,0,5
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Broadcast Control Channels - Identifier is 28532
+AT+CRSM=176,28532,0,0,16
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Forbidden PLMNs - Identifier is 28536
+AT+CRSM=176,28536,0,0,12
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Location Information - Identifier is 28542
+AT+CRSM=176,28542,0,0,11
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Administrative Data - Identifier is 28589
+AT+CRSM=176,28589,0,0,8
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Phase Identification - Identifier is 28580
+AT+CRSM=176,28590,0,0,1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Voice Group Call Service - Identifier is 28593
+AT+CRSM=176,28593,0,0,4
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Voice Group Call Service Status - Identifier is 28594
+AT+CRSM=176,28594,0,0,7
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Voice Broadcast Service - Identifier is 28595
+AT+CRSM=176,28595,0,0,4
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading enhanced Multi Level Preemption and Priority - Identifier is 28595
+AT+CRSM=176,28597,0,0,2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Cell Broadcasr Message Indentifier for Data Download - Identifier is 28488
+AT+CRSM=176,28488,0,0,2
+
+//WAIT for 1 sec
+WAIT=1
+
+//ReadingEmergency call codes - Identifier is 284672
+AT+CRSM=176,28472,0,0,8
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Cell broadcast message identifier range selection - Identifier is 28496
+AT+CRSM=176,28496,0,0,4
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Abbreviated dialing numbers - Identifier is 28474
+AT+CRSM=176,28474,0,0,15
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Fixed dialing numbers - Identifier is 28475
+AT+CRSM=176,28475,0,0,15
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading SIM Service Table - Identifier is 284672
+AT+CRSM=176,28472,0,0,8
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading SMS Status - Identifier is 28483
+AT+CRSM=176,28483,0,0,3
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Short message service parameters - Identifier is 28482
+AT+CRSM=176,28482,0,0,28
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading Last dialed number - Identifier is 28484
+AT+CRSM=176,28484,0,0,15
+
+//WAIT for 1 sec
+WAIT=1
+
+//Reading MSISDN - Identifier is 28480
+AT+CRSM=176,28480,0,0,15

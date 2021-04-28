@@ -1,0 +1,43 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cpas.at
+//Test AT+CPAS command 
+//AT+CPAS command is used to get phone activity status
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the list of supported responses
+AT+CPAS=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the phone activity status
+//0 - Ready
+// 2 - Unknown
+// 3-  Ringing (Device is ready for commands ringer is active
+// 4- Call in progress
+AT+CPAS
+
+//WAIT for 1 sec
+WAIT=1
+
+//Let us dial a call
+ATD858787433;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Get phone activity status now
+AT+CPAS
+
+//WAIT for 1 sec
+WAIT=1
+
+//Hang up the call
+ATH
+
+//WAIT for 7 sec
+WAIT=7
+
+//Get phone activity status now
+AT+CPAS
+

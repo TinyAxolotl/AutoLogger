@@ -1,0 +1,24 @@
+//Script: at+ctzu
+//This command is used for automatic time and time zone update
+
+//Get the command support
+AT+CTZU=?
+
+//Wait
+WAIT=2
+
+//Query the current system mode
+AT+CTZU?
+
+//Wait
+WAIT=2
+
+//Disable automatic time zone update via NITZ (network identity and time zone)
+AT+CTZU=0
+
+//Wait
+WAIT=2
+
+//Enable automatic time zone update via NITZ (network identity and time zone)
+AT+CTZU=1
+

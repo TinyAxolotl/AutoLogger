@@ -1,0 +1,5 @@
+//Script: at!setcnd
+//Change password-protected AT commands in Sierra Wireless module
+
+//Enter the password
+AT!SETCND="A170"

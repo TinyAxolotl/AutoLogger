@@ -1,0 +1,32 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cpin.at
+//Test AT+CPIN AT command 
+//AT+CPIN command is used to enter SIM PIN Code
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CPIN=?
+
+//Wait for 1 second
+WAIT=3
+
+//Check whether PIN code for SIM is required
+AT+CPIN?
+
+//Wait for 1 second
+WAIT=3
+
+//Set a PIN code
+AT+CPIN="1234"
+
+//Wait for 2 seconds
+WAIT=2
+
+//Now check SIM PIN status
+AT+CPIN?
+
+//Remove SIM lock
+AT+CLCK="SC",0,"1234"
+
+//Now check SIM PIN status
+AT+CPIN?

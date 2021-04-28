@@ -1,0 +1,14 @@
+//Script: simcom_get_gps.at
+//Verify that Simcom module supports GPS
+//Turn GPS on
+AT+CGPSPWR=1
+
+//Reset the GPS in autonomous mode
+AT+CGPSRST=0
+
+//Wait for the GPS reset
+WAIT=15
+
+//Get the current GPS location
+AT+CGPSINF=0
+

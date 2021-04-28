@@ -1,0 +1,79 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-initiate_voice_call.at
+//Procedure to voice data call
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//First check SIM is not locked and it is ready
+AT+CPIN?
+
+//Wait
+WAIT=1
+
+//Check the signal strength. In weak signal conditions, data throughput will be low
+AT+CSQ
+
+//Check what network is the device on
+AT+COPS?
+
+//Wait for few seconds as AT+COPS command can take time
+WAIT=3
+
+//Get the registration status of the device. If the status is '1', the device is registered and in home network
+AT+CREG?
+
+//Wait
+WAIT=3
+
+
+//Dial the number. Change the number in the example below
+ATD7767788888;
+
+//Wait
+WAIT=5
+
+//Hang up the call
+ATH
+
+//Wait
+WAIT=5
+
+//Dial the number. Disables presentaiton of own number to called party
+ATD7767788888I;
+
+//Wait
+WAIT=5
+
+//Hang up the call
+ATH
+
+//Dial the number. Enables presentaiton of own number to called party
+ATD7767788888i;
+
+//Wait
+WAIT=5
+
+//Hang up the call
+ATH
+
+//Wait
+WAIT=5
+
+//Dial the number. Activates closed user group invocation for this call
+ATD7767788888G;
+
+//Wait
+WAIT=5
+
+//Hang up the call
+ATH
+
+//Dial the number. Deactivates closed user group invocation for this call
+ATD7767788888g;
+
+//Wait
+WAIT=5
+
+//Hang up the call
+ATH
+
+

@@ -1,0 +1,58 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cpbr.at
+//Test AT+CPBR AT command 
+//AT+CPBR command is used to read phone book entries from the device
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+//Returns range supported by current storage, maximum lengths of number and text fields
+AT+CPBR=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Read Phonebook at index 1
+AT+CPBR=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Let us add a Phonebook entry with national number type
+AT+CPBW=,"8589898844",129,"John Smith"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Now read phonebook entry at index 1
+AT+CPBR=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Let us add another  Phonebook entry with international number type
+AT+CPBW=,"0018589898844",145,"John Smith"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Now read phonebook entry at index 2
+AT+CPBR=1,2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Now read all phone book entries
+AT+CPBR=1,50
+
+//WAIT for 1 sec
+WAIT=1
+
+
+
+
+
+
+
+
+
+

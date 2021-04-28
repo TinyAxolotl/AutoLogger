@@ -1,0 +1,41 @@
+//Script: at+cnmp
+//Preferred mode selection
+
+//Get the list of supported modes
+AT+CNMP=?
+
+//Query the bearer state
+AT+SAPBR=2,1
+
+//Open Bearer 1
+AT+SAPBR=1,1
+
+//Wait for the bearer to be opened
+WAIT=6
+
+//Set the the CID for FTP session
+AT+FTPCID=1
+
+//Set the FTP server name
+AT+FTPSERV="ftp.m2msupport.net"
+
+//Set the FTP user name
+AT+FTPUN="xxxxx"
+
+//Set the FTP password
+AT+FTPPW="xxxx"
+
+//Set the FTP filename to get
+AT+FTPGETNAME="ftptest.txt"
+
+//Set the FTP directory
+AT+FTPGETPATH="/www/m2msupport/"
+
+//Perform a FTP get
+AT+FTPGET=1
+
+//Wait
+WAIT=6
+
+//Get the data
+AT+FTPGET=2,1024

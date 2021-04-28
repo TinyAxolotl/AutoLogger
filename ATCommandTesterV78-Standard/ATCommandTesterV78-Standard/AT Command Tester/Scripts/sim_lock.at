@@ -1,0 +1,92 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script- sim_lock.at
+//Test SIM lock related AT commands with this script
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the status of SIM PIN
+//Pin status can be,
+//     READY -  This means  SIM PIN is already unlocked or lock has been disabled
+//     SIM PIN - This means SIM PIN is locked and code is required
+//     SIM PUK - Maximum number to retries to unlock has reached. PUK code is required from network provider to setup new PIN
+//     These are other less common return values - PH_SIM PIN, PH_SM PUK, SIM PIN2, SIM PUK2
+AT+CPIN?
+
+//WAIT for 1 sec
+WAIT=1
+
+//First let us check if PIN lock feature is enabled using facility lock AT command
+//"SC" is for SIM, 2 is query 
+AT+CLCK="SC",2
+
+//WAIT for 2 sec
+WAIT=2
+
+//Set up the SIM PIN LOCK
+// 1 is lock, "1234" is the pin code 
+AT+CLCK="SC",1,"1234"
+
+//WAIT for 2 sec
+WAIT=2
+
+//You need to reset the device for SIM PIN changes to take effect
+AT+CFUN=1,1
+
+//WAIT enough time for device to reset
+WAIT=15
+
+//Check SIM is ready
+AT+CPIN?
+
+//WAIT for 2 sec
+WAIT=2
+
+//Unlock SIM PIN
+AT+CPIN="1234"
+
+//WAIT for 2 sec
+WAIT=2
+
+//You can confirm if PIN lock feature is enabled
+AT+CLCK="SC",2
+
+//Let us change the SIM PIN code
+//1234 is current code, 4321 is new code
+AT+CPWD="SC","1234","4321"
+
+//WAIT for 2 sec
+WAIT=2
+
+//You need to reset the device for SIM PIN changes to take effect
+AT+CFUN=1,1
+
+//WAIT enough time for device to reset
+WAIT=15
+
+//Check the CPIN status
+AT+CPIN?
+
+//WAIT for 2 sec
+WAIT=2
+
+//Unlock SIM PIN
+AT+CPIN="4321"
+
+//WAIT for 2 sec
+WAIT=2
+
+//Confirm SIM is ready
+AT+CPIN?
+
+//Now let us clear SIM lock
+//O is to unlock SIM
+AT+CLCK="SC",0,"4321",1
+
+//You need to reset the device for SIM PIN changes to take effect
+AT+CFUN=1,1
+
+//WAIT enough time for device to reset
+WAIT=15
+
+//Check the CPIN status
+AT+CPIN?
+

@@ -1,0 +1,20 @@
+//Script: at+spic
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//Times remain to input SIM PIN/PUK
+
+
+//Get the command support
+AT+SPIC=?
+
+//Wait
+WAIT=2
+
+//+SPIC:<pin1>.<puk1>,<pin2>,<puk2>
+//pin1 - Times remain to input PIN1 code
+//puk1 - Times remain to input PUK1 code
+//pin2 - Times remain to input PIN2 code
+//puk2 - Times remain to input PUK2 code
+AT+SPIC
+
+

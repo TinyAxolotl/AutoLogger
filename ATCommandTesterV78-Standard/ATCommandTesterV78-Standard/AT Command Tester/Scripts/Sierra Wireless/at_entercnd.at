@@ -1,0 +1,11 @@
+//Script: at!entercnd
+//Enable password-protected AT commands in Sierra Wireless module
+
+//Enter the password
+AT!ENTERCND="1234"
+
+//Wait
+WAIT=1
+
+//Get the current password
+AT!ENTERCND?

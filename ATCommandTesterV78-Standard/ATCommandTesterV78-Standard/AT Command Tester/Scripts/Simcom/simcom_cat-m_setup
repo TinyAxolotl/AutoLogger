@@ -1,0 +1,28 @@
+//Script: simcom_cat-m_setup
+//The AT commands in this script are applicable for SIM7000 modules only
+//Check SIMCOM Module AT Command documentaiton
+//Configure for LTE CAT-M operation
+
+//Get the preferred mode
+AT+CMNB?
+
+//Wait
+WAIT=2
+
+//Set preferred mode to LTE CAT-M
+AT+CMNB=1
+
+//Wait
+WAIT=1
+
+//Get the supported bands for LTE CAT-M and NB-IOT
+AT+CBANDCFG=?
+
+//Get the current bands for LTE CAT-M and NB-IOT
+AT+CBANDCFG?
+
+//Set LTE CAT-M bands
+AT+CBANDCFG="CAT-M",2,3,4,12,13
+
+//Get the system mode
+AT+CPSI?

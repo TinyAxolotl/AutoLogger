@@ -1,0 +1,60 @@
+//Script: at+cnsmod
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//Return current network system mode.
+
+
+//Get the command support
+AT+CNSMOD=?
+
+//Wait
+WAIT=2
+
+//Query the current system mode
+//A numerical value is returned for stat
+//+CNSMOD:<n>,<stat>
+// 0 - no service
+//1 – GSM 
+//2 – GPRS 
+//3 – EGPRS (EDGE) 
+//4 – WCDMA 
+//5 – HSDPA only(WCDMA) 
+//6 – HSUPA only(WCDMA) 
+//7 – HSPA (HSDPA and HSUPA, WCDMA) 
+//8 – LTE 
+//9 – TDS-CDMA 
+//10 – TDS-HSDPA only 
+//11 – TDS- HSUPA only 
+//12 – TDS- HSPA (HSDPA and HSUPA) 
+//13 – CDMA 1
+//4 – EVDO 
+//15 – HYBRID (CDMA and EVDO) 
+//16 – 1XLTE(CDMA and LTE)//1 – GSM 
+//2 – GPRS 
+//3 – EGPRS (EDGE) 
+//4 – WCDMA 
+//5 – HSDPA only(WCDMA) 
+//6 – HSUPA only(WCDMA) 
+//7 – HSPA (HSDPA and HSUPA, WCDMA) 
+//8 – LTE 
+//9 – TDS-CDMA 
+//10 – TDS-HSDPA only 
+//11 – TDS- HSUPA only 
+//12 – TDS- HSPA (HSDPA and HSUPA) 
+//13 – CDMA 1
+//4 – EVDO 
+//15 – HYBRID (CDMA and EVDO) 
+//16 – 1XLTE(CDMA and LTE)
+AT+CNSMOD?
+
+//Wait
+WAIT=2
+
+//Enable auto report of teh network system mode
+AT+CNSMOD=1
+
+//Wait
+WAIT=2
+
+//Disable auto report of teh network system mode
+AT+CNSMOD=0

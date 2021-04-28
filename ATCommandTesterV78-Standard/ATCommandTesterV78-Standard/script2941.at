@@ -1,0 +1,58 @@
+AT+EMAILCID=1
+OK
+AT+EMAILTO=120
+OK
+AT+EMAILSSL=1
+OK
+AT+SMTPSRV="smtp.gmail.com",465
+OK
+AT+SMTPAUTH=1,"metaleastua@gmail.com","NKPTRT141dIvanPeredriy"
+OK
+AT+SMTPFROM=,"metaleastua@gmail.com","Ivan"
+ERROR
+AT+SMTPFROM="metaleastua@gmail.com","Ivan"
+OK
+AT+SMTPRCPT=0,0,"i.peredrii@student.khai.edu"
+OK
+AT+SMTPSUB="test mail"
+OK
+AT+SMTPBODY=4
+DOWNLOAD
+
+OK
+AT+SMTPSEND
+OK
+
++SMTPSEND: 67
+AT+SMTPSEND
+OK
+
++SMTPSEND: 65
+AT+SMTPAUTH=1,"overloadtestingblock","19216812Zz"
+OK
+AT+SMTPSEND
+OK
+
++SMTPSEND: 67
+AT+SMTPSEND
+OK
+
++SMTPSEND: 1
+AT+SMTPBODY=6
+DOWNLOAD
+
+OK
+AT+SMTPSEND
+ERROR
+AT+SMTPSEND
+ERROR
+AT+CMEE=1
+OK
+AT+SMTPSEND
++CME ERROR: 3
+AT+SAPBR=0,1
+OK
+AT+SAPBR=1,1
+OK
+AT+SMTPSEND
++CME ERROR: 3

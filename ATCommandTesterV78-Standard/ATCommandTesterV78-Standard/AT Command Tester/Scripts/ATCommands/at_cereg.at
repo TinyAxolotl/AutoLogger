@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cereg.at
+//Test AT+CEREG AT command 
+//AT+CEREG returns network registration status of device
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported write values for AT+CEREG
+AT+CEREG=?
+
+//Get current registration status
+//If there is any error, CME error code is returned
+AT+CEREG?
+
+//Configure to return unsolicited result code when network registration
+//is disabled
+AT+CEREG=0
+
+//Configure to return unsolicited result code  with when network registration is enabled
+AT+CEREG=1
+
+//Configure to return unsolicited result code when there is change in
+//network registration status or change of network cell
+AT+CEREG=2
+
+

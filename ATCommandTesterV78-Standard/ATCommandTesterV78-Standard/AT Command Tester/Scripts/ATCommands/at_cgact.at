@@ -1,0 +1,39 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cgact.at
+//Test AT+CGACT AT command 
+//AT+CGACT command is used to activate or deactivate PDP(Packet Data Profile) context
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CGACT=?
+
+//Wait for 1 second
+WAIT=0
+
+//Check whether PIN code for SIM is required
+AT+CGACT?
+
+//Wait for 1 second
+WAIT=1
+
+//Activate PDP profile 3
+AT+CGACT=1,3
+
+//Wait for 4 seconds
+WAIT=4
+
+//Check status of PDP profiles
+AT+CGACT?
+
+//Wait for 1 second
+WAIT=1
+
+//Deactivate profile 3
+AT+CGACT=0,3
+
+//Wait for 3 seconds
+WAIT=3
+
+//Check status of PDP profiles
+AT+CGACT?
+

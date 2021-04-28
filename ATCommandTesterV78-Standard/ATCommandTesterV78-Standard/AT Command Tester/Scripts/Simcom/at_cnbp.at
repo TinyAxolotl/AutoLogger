@@ -1,0 +1,18 @@
+//Script: at+cnbp
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//Preferred Band Selection
+
+//Get the list of supported modes
+AT+CNBP=?
+
+//Set the preferred band
+AT+CNBP=0x000700000FFF0380
+
+//Wait
+WAIT=2
+
+//Set mode to automatic
+AT+CNBP?
+
+

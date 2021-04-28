@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cgreg.at
+//Test AT+CGREG AT command 
+//AT+CGREG returns network registration status of device
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported write values for AT+CGREG
+AT+CGREG=?
+
+//Get current registration status
+//If there is any error, CME error code is returned
+AT+CGREG?
+
+//Configure to return unsolicited result code when network registration
+//is disabled
+AT+CGREG=0
+
+//Configure to return unsolicited result code  with when network registration is enabled
+AT+CGREG=1
+
+//Configure to return unsolicited result code when there is change in
+//network registration status or change of network cell
+AT+CGREG=2
+
+

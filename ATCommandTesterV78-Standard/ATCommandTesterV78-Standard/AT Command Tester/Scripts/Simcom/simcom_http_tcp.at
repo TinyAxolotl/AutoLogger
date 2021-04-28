@@ -1,0 +1,28 @@
+//Script:simcom_tcp_test.at
+//Note this is only applicable for Simcom 8xx and 9xx modules
+//Check the registration status
+AT+CREG?
+
+//Check attach status
+AT+CGACT?
+
+//Attach to the network
+AT+CGATT=1
+
+//Wait for Attach
+WAIT=7
+
+//Start task and set the APN. Check your carrier APN
+AT+CSTT="bluevia.movistar.es"
+
+//Bring up the wireless connection
+AT+CIICR
+
+//Wait for bringup
+WAIT=6
+
+//Get the local IP address
+AT+CIFSR
+
+//Start a TCP connection to remote address. Port 80 is TCP.
+AT+CIPSTART="TCP","74.124.194.252","80"

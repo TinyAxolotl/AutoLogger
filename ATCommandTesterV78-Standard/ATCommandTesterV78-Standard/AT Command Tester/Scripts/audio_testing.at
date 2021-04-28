@@ -1,0 +1,41 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-audio_testing.at
+//Test Audio commands with cellular modems
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Set ringer sound volume to 50
+AT+CRSL=50
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set loud speaker volume level to 50
+AT+CLVL=50
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set alert sound mode to silent
+AT+CALM=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Call number
+ATD8584548988;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Send DTMF tone #255*
+AT+VTS="#,2,5,5,*"
+
+//WAIT for 5 sec
+WAIT=5
+
+//Hangup the call
+ATH
+
+
+
+

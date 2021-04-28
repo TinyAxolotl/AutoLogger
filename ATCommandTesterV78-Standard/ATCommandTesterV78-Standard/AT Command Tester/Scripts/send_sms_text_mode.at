@@ -1,0 +1,39 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-send_sms_text_mode.at
+//Send SMS in Text Mode 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CMGF=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current SMS Mode
+// 0 - PDU Mode, 1- Text Mode,
+AT+CMGF?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Check whether device is registered
+//If device is not registered, SMS cannot be sent
+AT+CREG?
+
+//First let us send SMS in text mode
+AT+CMGF=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Send the message. Set your To number below
+AT+CMGS="8545579983"
+
+//Wait for the > prompt
+WAIT=2
+
+//Type the SMS text below
+This is my SMS message
+
+//Send the CTRL+Z character. ^z is special command of AT Command Script engine.
+^z

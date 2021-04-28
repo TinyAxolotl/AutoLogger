@@ -1,0 +1,28 @@
+//Script: simcom_nb-iot_setup
+//The AT commands in this script are applicable for SIM7000 modules only
+//Check SIMCOM Module AT Command documentaiton
+//Configure for NB-IOT operation
+
+//Get the preferred mode
+AT+CMNB?
+
+//Wait
+WAIT=2
+
+//Set preferred mode to NB-IOT
+AT+CMNB=2
+
+//Wait
+WAIT=1
+
+//Get the supported bands for LTE CAT-M and NB-IOT
+AT+CBANDCFG=?
+
+//Get the current bands for LTE CAT-M and NB-IOT
+AT+CBANDCFG?
+
+//Set NB-IOT bands
+AT+CBANDCFG="NB-IOT",2,3,4,12,13
+
+//Get the system mode
+AT+CPSI?

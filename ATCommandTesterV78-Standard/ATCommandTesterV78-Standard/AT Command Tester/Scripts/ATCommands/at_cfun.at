@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cfun.at
+//Test AT+CFUN AT command 
+//AT+CFUN command is used to device functionality
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CFUN=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Check whether PIN code for SIM is required
+AT+CFUN?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set for minimum functionality
+AT+CFUN=0
+
+//WAIT for 5 sec
+WAIT=5
+
+//Set for full functionality
+AT+CFUN=1
+
+//WAIT for 5 sec
+WAIT=5
+
+//Disable both transmit and receive RF circuits
+AT+CFUN=4
+
+//WAIT for 5 sec
+WAIT=5
+
+//Reset the device before setting for full functionlity
+AT+CFUN=1,1
+
+

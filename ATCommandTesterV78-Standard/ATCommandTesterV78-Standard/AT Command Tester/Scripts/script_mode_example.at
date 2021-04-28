@@ -1,0 +1,38 @@
+//Script:script_mode_example.at
+//Send multiple AT commands using script file
+//Special comamnds - WAIT, LOOP, LOOP-END
+//Comment lines start with '//'
+//When script file is opened or saved, comment line font is set to green and command line font is set to blue
+//Both command line and comment line should have enter in the end
+
+//Get the current operator and registration status of the device
+//Check Modem communciation
+AT
+
+//Get Product name
+ATI
+
+//Get manufacturer info
+AT+GSV
+
+//Set the time in the device to the current system time
+SET-CURRENT-TIME
+
+//Read signal strength every 3 seconds in a loop
+//Note that nested loop is not supported
+LOOP 5
+
+//Command to read signal strength
+AT+CSQ
+
+//This is the command to add wait between commands
+WAIT=3
+
+//Commands between LOOP and LOOP-END are executed for number of times specified in LOOP command
+LOOP-END
+
+//Get device phone number
+AT+CIMI
+
+//Get the device serial number
+AT+GSN

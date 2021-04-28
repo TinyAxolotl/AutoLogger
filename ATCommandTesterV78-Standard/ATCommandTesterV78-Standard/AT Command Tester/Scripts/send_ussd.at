@@ -1,0 +1,55 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-send_ussd.at
+//Send USSD
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CUSD=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Status of result code presentation
+// 0 - result code presentation is disabled, 1- result code presentation is enabled ,
+AT+CUSD?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Disable USSD result code presentation
+AT+CUSD=0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Enable USSD result code presentation
+AT+CUSD=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Cancel session
+AT+CUSD=2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set the character set to GSM
+AT+CSCS="GSM"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Send short code
+//Check the list of short code supported by your network
+//15 is encoding scheme as per GSM 3.38
+//If you send supported short code, you should see response from network
+//for example, below short on T-Mobile (US) should provide response account balance on prepaid accounts
+AT+CUSD=1,"#999#",15
+
+//WAIT for 1 sec
+WAIT=5
+
+//If you send unsupport code, you will see cancel reponse session +CUSD :2
+AT+CUSD=1,"unsupported code",15
+

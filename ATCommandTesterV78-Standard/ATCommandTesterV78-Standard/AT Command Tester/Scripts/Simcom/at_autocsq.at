@@ -1,0 +1,35 @@
+//Script: at+autocsq
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//Set CSQ report
+
+
+//Get the command responses
+AT+AUTOCSQ=?
+
+//Wait for 2 seconds
+WAIT=2
+
+//Response format is +AUTOCSQL<auto>,<mode>
+//<auto> : 0 - disable automatic report, 1 - Enable automatic report
+//<mode> : 0 - CSQ automatic report every 5 seconds , 1 - CSQ automatic report only after rssi or BER is changed
+AT+AUTOCSQ?
+
+//Wait for 2 seconds
+WAIT=2
+
+AT+AUTOCSQ=0,0
+
+//Wait for 2 seconds
+WAIT=2
+
+
+//CSQ report every 5 seconds
+AT+AUTOCSQ=1,0
+
+//Wait for 2 seconds
+WAIT=2
+
+//CSQ report when rssi or ber chabges
+AT+AUTOCSQ=1,1
+

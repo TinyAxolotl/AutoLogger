@@ -1,0 +1,57 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cops.at
+//Test AT+COPS AT command 
+//AT+COPS command is used to select network operator
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+COPS=?
+
+//Wait for 15 seconds. Depending on network conditions, you may have to increase this wait time
+WAIT=15
+
+//Return current mode and currently selected operator
+AT+COPS?
+
+//Wait for 15 seconds
+WAIT=15
+
+//Manually select T-mobile as carrier using short format alphanumeric network name
+AT+COPS=1,0,"TMO"
+
+//Wait for 10 seconds
+WAIT=10
+
+//Manually select T-mobile as carrier using long format alphanumeric network name
+AT+COPS=1,1,"T-Mobile USA"
+
+//Wait for 10 seconds
+WAIT=15
+
+//Get registation status
+AT+CREG?
+
+//Manual deregister from network
+AT+COPS=2
+
+//Wait for 10 seconds
+WAIT=10
+
+//Get registration now
+AT+COPS?
+
+//Manually select T-mobile as carrier using numeric network name
+AT+COPS=1,2,"310260"
+
+//Wait for 10 seconds
+WAIT=10
+
+//If manual selection fails, enter automatic selection mode
+AT+COPS=4, 0, "TMO"
+
+//Wait for 10 seconds
+WAIT=10
+
+//Set for automatic network selection, this is generally preferred
+AT+COPS=0,0, "TMO"
+

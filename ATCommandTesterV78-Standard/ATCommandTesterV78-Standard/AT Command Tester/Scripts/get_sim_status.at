@@ -1,0 +1,4 @@
+//Script:get_sim_status.at
+//Check the SIM card status. If it returns READY, then further operations can continue.
+//If it returns PIN code, then SIM should be unlocked
+AT+CPIN?

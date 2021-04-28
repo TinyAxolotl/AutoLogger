@@ -1,0 +1,27 @@
+//Script: at+cnbp
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//Acquisition order preference
+
+
+//Get the current order preference
+AT+CNAOP?
+
+//Set the preferred band
+//mode = 7 
+//sys_mode 
+// 2 - CDMA
+// 3 - GSM
+//4 - HDR
+//5 - WCDMA
+//9 - LTE
+//11 - TDSCDMA
+AT+CNAOP=7,9,5,3,11,2,4
+
+//Wait
+WAIT=2
+
+//Read the order preference again
+AT+CNAOP?
+
+

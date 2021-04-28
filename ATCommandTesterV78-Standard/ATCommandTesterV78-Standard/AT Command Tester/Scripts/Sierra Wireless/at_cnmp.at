@@ -1,0 +1,34 @@
+//Script: at!mapuart
+//Map services to UART
+
+//Get the support services fpr mapuart command
+AT!MAPUART=?
+
+//Wait
+WAIT=1
+
+//Get the current mapping of uart services
+AT!MAPUART?
+
+//Supported services
+// 0—UART disabled
+// 1—AT command service (Note: Not available for UART2)
+// 2—Diagnostic Message (DM) service
+// 3—Reserved
+// 4—NMEA service
+// 5–15—Reserved
+// 16—Linux Console
+// 17—Customer Linux application
+//<uart> (Physical UART)
+// 1—UART1 (Default)
+// 2—UART
+
+//Map the AT Command Service to UART1
+//Note that the device needs to be reset for the change to take effect.
+AT!MAPUART=1,1
+
+//Wait
+WAIT=1
+
+//Map the NMEA service to UART2
+AT!MAPUART=4,2

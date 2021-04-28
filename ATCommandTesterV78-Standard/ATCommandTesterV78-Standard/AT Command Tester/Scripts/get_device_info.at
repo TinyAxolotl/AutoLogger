@@ -1,0 +1,19 @@
+//Script:get_device_info.at
+//Get the current operator and registration status of the device
+
+
+//Check Modem communciation
+AT
+
+//Get Product name
+ATI
+
+//Get manufacturer Info
+AT+GSV
+
+//Get device phone number
+AT+CIMI
+
+//Get the device serial number
+AT+GSN
+

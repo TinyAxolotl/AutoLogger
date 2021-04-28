@@ -1,0 +1,28 @@
+//Script: at+netmode
+//This AT command is applicable for SIMCOM modules only
+//Check SIMCOM Module AT Command documentaiton
+//WCDMA and TDSCDMA mode select
+
+
+//Get the command support
+AT+NETMODE=?
+
+//Wait
+WAIT=2
+
+//Get the current mode
+AT+NETMODE?
+
+//Wait
+WAIT=2
+
+//Set for TDSCDMA mode
+AT+NETMODE=1
+
+//Wait
+WAIT=2
+
+//Set for WCDMA mode
+AT+NETMODE=2
+
+

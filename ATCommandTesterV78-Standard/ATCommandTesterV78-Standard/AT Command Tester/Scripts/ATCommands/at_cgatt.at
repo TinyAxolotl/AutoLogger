@@ -1,0 +1,43 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cgatt.at
+//Test AT+CGATT AT command 
+//AT+CGATT command is used to attach or detach to packet domain service
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+//Supported states are 0- Detached, 1 - Attached
+AT+CGATT=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current state
+AT+CGATT?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Detach from network
+AT+CGATT=0
+
+//WAIT for 1 sec
+WAIT=2
+
+//Check if detached from network
+AT+CGATT?
+
+//WAIT for 1 sec
+WAIT=1
+
+
+//Attach to network
+AT+CGATT=1
+
+//WAIT for 1 sec
+WAIT=2
+
+//Check if attached to network
+AT+CGATT?
+
+//WAIT for 1 sec
+WAIT=1

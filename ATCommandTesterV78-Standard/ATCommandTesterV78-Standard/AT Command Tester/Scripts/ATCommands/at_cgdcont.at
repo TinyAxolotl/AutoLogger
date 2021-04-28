@@ -1,0 +1,53 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cgdcont.at
+//Test AT+CGDCONT AT command 
+//AT+CGDCONT command is used to define PDP context
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+AT+CGDCONT=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current list of PDP profiles
+AT+CGDCONT?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set APN of PDP context 1. Network provider has unique APN
+//Configure for IP address to be dynamically allocated.
+//PDP data and header compression is set to off
+//Configure for IP protocol
+AT+CGDCONT= 1,"IP","epc.tmobile.com","0.0.0.0",0,0
+
+//Get the current list of PDP profiles
+AT+CGDCONT?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set up PDP context 2.
+//Set up IPV6 as data protocol.
+//Configure for IP address to be dynamically allocated.
+//PDP data and header compression is set to on
+AT+CGDCONT= 2,"IPV6","vzwinternet","0.0.0.0",1,1
+
+//Get the current list of PDP profiles
+AT+CGDCONT?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set up PDP context 3.
+//Set up dual IP stack IPV4V6 as data protocol.
+//Configure for IP address to be dynamically allocated.
+//PDP data compression is set to V.42bis
+AT+CGDCONT= 3,"IPV4V6","iot.aer.net","0.0.0.0",0,0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current list of PDP profiles
+AT+CGDCONT?

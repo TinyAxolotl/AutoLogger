@@ -1,0 +1,41 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_crsl.at
+//Test AT+CRSL command 
+//AT+CRSL commadn is used to set/get ringer sound level
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the list of supported responses
+AT+CRSL=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current ringer sound level
+//Returned value should be in range 0-100
+AT+CRSL?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set ringer sound level to 50
+AT+CRSL=50
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CRSL?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set ringer sound level to 100
+AT+CRSL=100
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CRSL?
+
+

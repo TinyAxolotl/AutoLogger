@@ -1,0 +1,42 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_clip.at
+//Test AT+CLIP AT command 
+//AT+CLIP Calling line identificaiton presentation
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported write values for AT+CLIP
+AT+CLIP=?
+
+//Get current settng for calling line identificaiton 
+// Response is in format +CLIP:<n>,<m>
+//n - If +CLIP notificaiton is enabled or disabled
+//m - If +CLIP is provisioned or not provisioned in network
+AT+CLIP?
+
+//WAIT for 1 sec
+WAIT=2
+
+//Enable +CLIP notification
+AT+CLIP=1
+
+//WAIT for 1 sec
+WAIT=2
+
+//confirm the setting
+AT+CLIP?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Disable +CLIP notification
+AT+CLIP=0
+
+//WAIT for 1 sec
+WAIT=2
+
+//confirm the setting
+AT+CLIP?
+
+//WAIT for 1 sec
+WAIT=1
+

@@ -1,0 +1,73 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-initiate_data_call.at
+//Procedure to setup data call
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//First check SIM is not locked and it is ready
+AT+CPIN?
+
+//Wait
+WAIT=1
+
+//Check the signal strength. In weak signal conditions, data throughput will be low
+AT+CSQ
+
+//Check what network is the device on
+AT+COPS?
+
+//Wait for few seconds as AT+COPS command can take time
+WAIT=3
+
+//Get the registration status of the device. If the status is '1', the device is registered and in home network
+AT+CGREG?
+
+//Wait
+WAIT=3
+
+//Set up PDP context. Refer to the service provider for APN info
+AT+CGDCONT=1,"IP","epc.tmobile.com"
+
+//Wait
+WAIT=1
+
+//Confirm setting by reading PDP profile
+AT+CGDCONT?
+
+//Perform a GPRS Attach
+AT+CGATT=1
+
+//Wait
+WAIT=3
+
+//Check the status of attach
+AT+CGATT?
+
+//Activate the PDP context
+AT+CGACT=1,1
+
+//Wait
+WAIT=3
+
+//Get the assigned IP Address 
+AT+CGPADDR=1
+
+//Wait
+WAIT=3
+
+//Check PDP profile.
+AT+CGDCONT?
+
+//Deactivate PDP Context
+AT+CGACT=0,1
+
+//Wait
+WAIT=3
+
+//Detach from network
+AT+CGATT=0
+
+
+
+
+
+

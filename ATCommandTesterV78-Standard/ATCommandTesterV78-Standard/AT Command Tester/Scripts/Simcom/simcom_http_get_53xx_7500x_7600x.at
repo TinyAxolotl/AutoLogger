@@ -1,0 +1,19 @@
+//Script: simcom_http_get_53xx_7500x_7600x.at
+//Use this script to test HTTP GET AT command with Simcom modules.
+//This script can be used on following Simcom modules-
+//SIM53XX, SIM7100X, SIM7500X, SIM7600X
+
+//Launch the HTTP Operation
+AT+CHTTPACT="httpbin.org",80
+
+//Wait for the +CHTTPACT: REQUEST from the module
+WAIT=1
+
+
+//Build a HTTP GET request
+//<cr><lf> are script commands for carriage retun and line feed
+//^z is a script command to send the CTRL+Z character
+GET http://httpbin.org/get HTTP/1.1<cr><lf>Host: httpbin.org<cr><lf>User-Agent: AT Command Tester<cr><lf>Content-Length: 0<cr><lf><cr><lf>^z<cr><lf>
+
+
+

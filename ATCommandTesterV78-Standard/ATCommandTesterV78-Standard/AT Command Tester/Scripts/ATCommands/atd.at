@@ -1,0 +1,66 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-atd.at
+//Test ATD command 
+//ATD command is used to setup outgoing voice, data or fax calls
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Call number
+ATD8584548988;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Hangup the call
+ATH
+
+//WAIT for 3 sec
+WAIT=3
+
+//Disables presentation of own number to called party
+ATD884548988I;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Hangup the call
+ATH
+
+//WAIT for 3 sec
+WAIT=3
+
+//Disables presentation of own number to called party
+ATD884548988i;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Hangup the call
+ATH
+
+//WAIT for 3 sec
+WAIT=3
+
+//Activates Closed User Group invocation for this call only
+ATD884548988G;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Hangup the call
+ATH
+
+//WAIT for 3 sec
+WAIT=3
+
+
+//Deactivates Closed User Group invocation for this call only
+ATD884548988g;
+
+//WAIT for 3 sec
+WAIT=3
+
+//Hangup the call
+ATH
+
+//WAIT for 3 sec
+WAIT=3

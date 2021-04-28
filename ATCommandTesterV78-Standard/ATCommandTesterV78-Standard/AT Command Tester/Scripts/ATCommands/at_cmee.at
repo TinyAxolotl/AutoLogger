@@ -1,0 +1,53 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cmee.at
+//Test AT+CMEE AT command 
+//AT+CMEE Request Mobile Equipment Error
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported write values for AT+CMEE
+AT+CMEE=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get current setting for error reporting
+//If there is any error, CME error code is returned
+AT+CMEE?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Disable +CME ERROR: <err> result code and use ERROR instead
+//is disabled
+AT+CMEE=0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Try an AT command that will result in error condition
+AT+CREG=5
+
+//WAIT for 1 sec
+WAIT=1
+
+//Enable +CME ERROR: <err> result code and use numeric <err> is enabled
+AT+CMEE=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Try an AT command that will result in error condition
+AT+CREG=5
+
+//WAIT for 1 sec
+WAIT=1
+
+//Enable +CME ERROR: <err> result code and use verbose <err> values
+AT+CMEE=2
+
+//WAIT for 1 sec
+WAIT=1
+
+//Try an AT command that will result in error condition
+AT+CREG=5
+

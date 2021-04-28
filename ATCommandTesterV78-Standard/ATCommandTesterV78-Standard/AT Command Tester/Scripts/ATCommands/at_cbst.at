@@ -1,0 +1,31 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at_cbst.at
+//Test AT+CBST AT command 
+//AT+CBST command is used to select bearer service type
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//List of supported responses
+//TA selects the bearer service <name> with data rate <speed>, 
+//and the connection element <ce> to be used when data calls are originated.
+AT+CBST=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query the current setting
+AT+CBST?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Speed - 9600,name - Data circuit asynchronous (UDI), connection elecment is non-transparent
+AT+CBST=71,0,1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Query to check our settings
+AT+CBST?
+
+//WAIT for 1 sec
+WAIT=1

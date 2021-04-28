@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-at+calm.at
+//Test AT+CALM command 
+//AT+CALM is used to set/get alert sound mode
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Get the list of supported responses
+AT+CALM=?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the curret alert sound mode
+AT+CALM?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set alert sound mode to normal
+AT+CALM=0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CALM?
+
+//WAIT for 1 sec
+WAIT=1
+
+//Set alert sound mode to silent
+AT+CALM=1
+
+//WAIT for 1 sec
+WAIT=1
+
+//Confirm by reading back 
+AT+CALM?
+
+

@@ -1,0 +1,50 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Script-send_sms_in_chinese.at
+//Send SMS in Chinese
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Set SMS Text Mode Parameters
+//fo - SMS-SUBMIT(17), Validity Period (167), TP-Protocol Identifier (2), Data Coding Scheme (25) is UCS2
+AT+CSMP=17,167,2,25
+
+//WAIT for 1 sec
+WAIT=1
+
+//Get the current SMS Mode
+// 0 - PDU Mode, 1- Text Mode,
+AT+CSCS="UCS2"
+
+//WAIT for 1 sec
+WAIT=1
+
+//Send SMS in PDU mode
+AT+CMGF=0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Check whether device is registered
+//If device is not registered, SMS cannot be sent
+AT+CMGS="0031003300390031003800310038003x003x003x003x"
+
+//Send SMS in PDU mode
+AT+CMGF=0
+
+//WAIT for 1 sec
+WAIT=1
+
+//Send the message. Set your To number below
+//Use the SMS tab in AT Command Tester tool to get PDU formatted message.
+AT+CMGS=44
+
+//Wait for the > prompt
+WAIT=2
+
+//Send the PDU formatted message
+0011000A8158585555550000aa23D4F29C0E6A97E7F3F0B90C32CBDF6D50900A1ABEDBEDB09B0CA296E7F4B21C
+
+//Wait for the > prompt
+WAIT=2
+
+//Send the CTRL+Z character. ^z is special command of AT Command Script engine.
+^z
